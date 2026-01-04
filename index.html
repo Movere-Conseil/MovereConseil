@@ -14,9 +14,9 @@
             --beige-warm: #F8F5F0; 
             --beige-dark: #E2D1C3;
             --accent: #A67D5D; 
-            --ocean-blue: #1e3a8a; /* Bleu profond pour l'océan */
-            --land-green: #15803d;  /* Vert pour les continents */
-            --airplane-gray: #94a3b8; /* Gris pour l'avion */
+            --ocean-deep: #2A1F18; 
+            --land-white: #ffffff; 
+            --airplane-white: #ffffff; 
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -81,11 +81,11 @@
             height: 280px;
             border-radius: 50%;
             overflow: hidden;
-            background: var(--ocean-blue); 
+            background: var(--ocean-deep); 
             z-index: 1;
             box-shadow: inset -20px -20px 60px rgba(0,0,0,0.7), 
                         inset 10px 10px 40px rgba(255,255,255,0.1),
-                        0 0 40px rgba(30, 58, 138, 0.3);
+                        0 0 50px rgba(255, 255, 255, 0.3);
         }
         .globe-map-wrapper {
             display: flex;
@@ -109,18 +109,6 @@
             animation: orbit-plane 20s linear infinite;
         }
 
-        .team-photo-container {
-            position: relative;
-            background-color: var(--beige-dark);
-            border: 12px solid white;
-            box-shadow: 0 25px 50px -12px rgba(42, 31, 24, 0.25);
-            transition: transform 0.3s ease;
-        }
-        .team-photo-container:hover {
-            transform: translateY(-5px);
-        }
-        .logo-img { height: 50px; width: auto; object-fit: contain; }
-        
         .contact-input, .ai-input {
             background-color: white;
             border: 1px solid var(--beige-dark);
@@ -140,16 +128,15 @@
             padding-left: 1.5rem;
         }
 
-        /* --- ÉTATS IA --- */
-        .loading-dots:after {
-            content: '.';
-            animation: dots 1.5s steps(5, end) infinite;
+        .team-photo-container {
+            position: relative;
+            background-color: var(--beige-dark);
+            border: 12px solid white;
+            box-shadow: 0 25px 50px -12px rgba(42, 31, 24, 0.25);
+            transition: transform 0.3s ease;
         }
-        @keyframes dots {
-            0%, 20% { content: '.'; }
-            40% { content: '..'; }
-            60% { content: '...'; }
-            80%, 100% { content: ''; }
+        .team-photo-container:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
@@ -159,7 +146,7 @@
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#E2D1C3]/40">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4 cursor-pointer" onclick="navigateTo('home')">
-                <img src="https://i.postimg.cc/2y41bVdJ/Whats-App-Image-2026-01-03-at-16-09-30.jpg" alt="Logo Movere Conseil" class="logo-img rounded-md">
+                <img src="https://i.postimg.cc/2y41bVdJ/Whats-App-Image-2026-01-03-at-16-09-30.jpg" alt="Logo Movere Conseil" class="logo-img h-[50px] rounded-md">
                 <div class="flex flex-col">
                     <span class="text-xl font-bold tracking-tight text-[#2A1F18] leading-none uppercase">Movere</span>
                     <span class="text-[10px] uppercase tracking-[0.3em] text-[#A67D5D] mt-1 italic font-semibold">Conseil</span>
@@ -169,7 +156,7 @@
                 <a href="#services" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">La méthode</a>
                 <a href="#parcours" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">Nos parcours</a>
                 <a href="#fiscalite" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">Expertise Fiscale</a>
-                <a href="#equipe" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">L'équipe</a>
+                <button onclick="navigateTo('team')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">L'équipe</button>
                 <a href="#contact-page" onclick="navigateTo('home')" class="bg-[#2A1F18] text-white px-6 py-2.5 rounded-full hover:bg-[#4A3728] transition shadow-md">Contact</a>
             </div>
         </div>
@@ -185,10 +172,10 @@
                         Penser, structurer, <br><span class="text-[#E2D1C3] italic font-light">s'installer.</span>
                     </h1>
                     <p class="text-xl text-[#E2D1C3]/90 mb-12 font-light leading-relaxed max-w-xl">
-                        Movere Conseil accompagne chaque projet de vie internationale avec rigueur et proximité. De la réflexion stratégique à votre intégration locale.
+                        Movere Conseil accompagne chaque projet d’expatriation avec rigueur et proximité. De la réflexion stratégique à votre installation.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-5">
-                        <button onclick="navigateTo('search')" class="bg-[#A67D5D] text-white px-10 py-5 rounded-2xl font-bold text-center hover:scale-105 transition shadow-xl text-lg">Démarrer la recherche</button>
+                        <a href="https://cal.com/movereconseil-outlook.com" target="_blank" class="bg-[#A67D5D] text-white px-10 py-5 rounded-2xl font-bold text-center hover:scale-105 transition shadow-xl text-lg">Organiser mon installation</a>
                         <a href="#services" class="bg-white/10 border border-white/20 text-white px-10 py-5 rounded-2xl font-bold text-center hover:bg-white/20 transition text-lg text-center">Découvrir la méthode</a>
                     </div>
                 </div>
@@ -199,43 +186,42 @@
                         <div class="globe-sphere">
                             <div class="globe-map-wrapper">
                                 <svg class="world-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
-                                    <!-- Tracés de continents plus denses et verts -->
-                                    <path fill="var(--land-green)" d="M120,80 Q150,70 180,90 T220,130 T190,180 T140,220 T90,180 T80,120 Z" /> <!-- Amérique Nord -->
-                                    <path fill="var(--land-green)" d="M140,220 Q170,250 160,320 T130,420 T80,380 T110,280 Z" /> <!-- Amérique Sud -->
-                                    <path fill="var(--land-green)" d="M420,80 Q450,70 490,90 T510,140 T470,180 T420,150 Z" /> <!-- Europe -->
-                                    <path fill="var(--land-green)" d="M430,180 Q480,190 530,240 T510,350 T440,380 T400,300 T410,220 Z" /> <!-- Afrique -->
-                                    <path fill="var(--land-green)" d="M520,100 Q650,80 800,120 T850,220 T700,300 T550,250 T520,150 Z" /> <!-- Asie -->
-                                    <path fill="var(--land-green)" d="M820,280 Q880,260 940,300 T900,380 T820,340 Z" /> <!-- Océanie -->
-                                    <path fill="var(--land-green)" d="M250,50 Q300,40 350,60 T300,80 Z" /> <!-- Groenland -->
-                                    <path fill="var(--land-green)" d="M600,350 Q630,340 660,360 T630,380 Z" /> <!-- Madagascar -->
-                                    <circle cx="440" cy="110" r="3" fill="#fff" opacity="0.5" />
-                                    <circle cx="150" cy="140" r="2" fill="#fff" opacity="0.5" />
+                                    <defs>
+                                        <pattern id="hatch-pattern" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                                            <line x1="0" y1="0" x2="0" y2="8" stroke="white" stroke-width="1.2" opacity="0.7" />
+                                        </pattern>
+                                    </defs>
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M40,120 L80,100 L120,80 L160,70 L220,90 L240,140 L210,180 L230,220 L180,250 L140,240 L100,240 L60,200 L40,150 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M160,260 L200,280 L195,330 L175,410 L140,460 L100,430 L90,380 L115,310 L135,275 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M410,180 L460,170 L520,175 L560,230 L545,310 L520,380 L470,410 L430,380 L400,310 L405,230 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M410,80 L450,70 L510,65 L535,90 L525,140 L480,165 L420,165 L405,120 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M540,110 L630,90 L780,85 L880,130 L900,230 L840,290 L750,285 L640,265 L550,220 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M810,330 L890,320 L925,350 L910,410 L850,425 L805,395 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M270,40 L340,30 L370,50 L340,80 L280,75 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M605,345 L640,340 L645,375 L615,380 Z" />
                                 </svg>
                                 <svg class="world-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
-                                    <path fill="var(--land-green)" d="M120,80 Q150,70 180,90 T220,130 T190,180 T140,220 T90,180 T80,120 Z" />
-                                    <path fill="var(--land-green)" d="M140,220 Q170,250 160,320 T130,420 T80,380 T110,280 Z" />
-                                    <path fill="var(--land-green)" d="M420,80 Q450,70 490,90 T510,140 T470,180 T420,150 Z" />
-                                    <path fill="var(--land-green)" d="M430,180 Q480,190 530,240 T510,350 T440,380 T400,300 T410,220 Z" />
-                                    <path fill="var(--land-green)" d="M520,100 Q650,80 800,120 T850,220 T700,300 T550,250 T520,150 Z" />
-                                    <path fill="var(--land-green)" d="M820,280 Q880,260 940,300 T900,380 T820,340 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M40,120 L80,100 L120,80 L160,70 L220,90 L240,140 L210,180 L230,220 L180,250 L140,240 L100,240 L60,200 L40,150 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M160,260 L200,280 L195,330 L175,410 L140,460 L100,430 L90,380 L115,310 L135,275 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M410,180 L460,170 L520,175 L560,230 L545,310 L520,380 L470,410 L430,380 L400,310 L405,230 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M410,80 L450,70 L510,65 L535,90 L525,140 L480,165 L420,165 L405,120 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M540,110 L630,90 L780,85 L880,130 L900,230 L840,290 L750,285 L640,265 L550,220 Z" />
+                                    <path fill="url(#hatch-pattern)" stroke="white" stroke-width="0.8" d="M810,330 L890,320 L925,350 L910,410 L850,425 L805,395 Z" />
                                 </svg>
                             </div>
                             <div class="globe-overlay"></div>
                         </div>
-                        <!-- Avion rapproché en gris -->
                         <div class="absolute inset-[-60px] pointer-events-none">
                             <svg viewBox="0 0 460 460" class="w-full h-full overflow-visible">
                                 <g transform="rotate(-35 230 230)">
                                     <g class="animate-plane origin-center">
-                                        <!-- Orbite rapprochée -->
-                                        <circle cx="230" cy="230" r="165" fill="none" stroke="var(--airplane-gray)" stroke-width="0.5" stroke-dasharray="4 15" opacity="0.2" />
                                         <g transform="translate(230, 65)">
                                             <g transform="rotate(90)">
                                                 <path d="M15 11V9L10 6V2.5C10 1.67 9.33 1 8.5 1S7 1.67 7 2.5V6L2 9V11L7 9.5V13.5L5.5 14.5V16L8.5 15L11.5 16V14.5L10 13.5V9.5L15 11Z" 
-                                                      fill="var(--airplane-gray)" 
+                                                      fill="var(--airplane-white)" 
                                                       transform="scale(1.8) translate(-8.5,-8.5)" />
                                             </g>
-                                            <circle cx="0" cy="0" r="3" fill="var(--airplane-gray)" class="animate-ping" opacity="0.4" />
+                                            <circle cx="0" cy="0" r="3" fill="var(--airplane-white)" class="animate-ping" opacity="0.4" />
                                         </g>
                                     </g>
                                 </g>
@@ -250,23 +236,23 @@
         <section id="services" class="py-24 bg-white text-center">
             <div class="max-w-6xl mx-auto px-6 mb-20 text-center">
                 <h2 class="text-4xl font-bold mb-6 text-[#2A1F18]">Une méthode claire pour tous</h2>
-                <p class="text-[#4A3728] text-lg max-w-2xl mx-auto font-light leading-relaxed">Parce que partir à l'étranger ne devrait pas être un casse-tête réservé aux experts.</p>
+                <p class="text-[#4A3728] text-lg max-w-2xl mx-auto font-light leading-relaxed">Pour passer d’une envie de départ à un projet structuré.</p>
             </div>
             <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
                 <div class="group">
                     <i data-lucide="search" class="w-12 h-12 text-[#A67D5D] mx-auto mb-6"></i>
                     <h3 class="text-2xl font-bold mb-4">1. Analyse du projet</h3>
-                    <p class="text-[#4A3728] leading-relaxed">Nous étudions ensemble vos besoins : budget, famille et style de vie pour sécuriser votre décision.</p>
+                    <p class="text-[#4A3728] leading-relaxed">Nous analysons votre situation et vos objectifs, afin de vous proposer une analyse complète d’un pays correspondant à vos attentes</p>
                 </div>
                 <div class="group">
                     <i data-lucide="file-check" class="w-12 h-12 text-[#A67D5D] mx-auto mb-6"></i>
                     <h3 class="text-2xl font-bold mb-4">2. Organisation</h3>
-                    <p class="text-[#4A3728] leading-relaxed">Visa, fiscalité et démarches. Nous préparons votre dossier pour éviter toute mauvaise surprise.</p>
+                    <p class="text-[#4A3728] leading-relaxed">Nous vous aidons à anticiper les conséquences fiscales du départ et à organiser les démarches administratives essentielles.</p>
                 </div>
                 <div class="group">
                     <i data-lucide="map-pin" class="w-12 h-12 text-[#A67D5D] mx-auto mb-6"></i>
                     <h3 class="text-2xl font-bold mb-4">3. Installation</h3>
-                    <p class="text-[#4A3728] leading-relaxed">Accompagnement clé en main sur place. Logement, banque et intégration.</p>
+                    <p class="text-[#4A3728] leading-relaxed">Nous vous conseillons et vous accompagnons pour optimiser votre nouvelle vie à l’étranger</p>
                 </div>
             </div>
         </section>
@@ -283,7 +269,7 @@
                         <i data-lucide="compass" class="w-12 h-12 text-[#A67D5D] mb-6"></i>
                         <div class="text-[#A67D5D] mb-2 uppercase text-xs font-bold tracking-widest">Parcours 1</div>
                         <h3 class="text-2xl font-bold mb-4 italic">Je cherche ma destination</h3>
-                        <p class="text-[#4A3728] mb-8 font-light leading-relaxed">Vous voulez partir mais hésitez sur le pays ? Nous comparons le coût de la vie et les opportunités pour vous.</p>
+                        <p class="text-[#4A3728] mb-8 font-light leading-relaxed">Vous hésitez sur le pays de destination ?<br>Nous comparons les pays envisageables afin de vous proposer la destination la plus adaptée à vos besoins, à votre projet de vie et aux implications fiscales qui en découlent.</p>
                     </div>
                     <button onclick="navigateTo('search')" class="w-full py-5 rounded-2xl bg-[#2A1F18] text-white font-bold hover:bg-[#4A3728] transition shadow-lg text-lg">Démarrer la recherche</button>
                 </div>
@@ -292,19 +278,18 @@
                         <i data-lucide="target" class="w-12 h-12 text-[#2A1F18] mb-6"></i>
                         <div class="text-[#A67D5D] mb-2 uppercase text-xs font-bold tracking-widest">Parcours 2</div>
                         <h3 class="text-2xl font-bold mb-4 italic">Je sais déjà où je vais</h3>
-                        <p class="text-[#4A3728] mb-8 font-light leading-relaxed">Votre destination est fixée ? Nous vous donnons la liste exacte des choses à faire pour une installation sereine.</p>
+                        <p class="text-[#4A3728] mb-8 font-light leading-relaxed">Votre destination est fixée ? Nous vous proposons une analyse complète en vous donnant la liste des actions à réaliser pour une installation optimale.</p>
                     </div>
-                    <!-- Mise à jour du lien Agenda Cal.com -->
                     <a href="https://cal.com/movereconseil-outlook.com" target="_blank" class="w-full py-5 rounded-2xl border-2 border-[#2A1F18] text-[#2A1F18] font-bold hover:bg-[#2A1F18] hover:text-white transition text-lg text-center inline-block">Organiser mon installation</a>
                 </div>
             </div>
         </section>
 
-        <!-- Équipe -->
-        <section id="equipe" class="py-24 bg-white border-t border-[#E2D1C3]/20">
+        <!-- Section Associés -->
+        <section id="associes-front" class="py-24 bg-white border-t border-[#E2D1C3]/20">
             <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div class="team-photo-container rounded-[40px] overflow-hidden group">
-                    <img src="https://i.postimg.cc/g0RN0KX0/Whats-App-Image-2026-01-03-at-16-09-30.jpg" alt="Les Associés Movere Conseil" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="https://i.postimg.cc/g0RN0KX0/Whats-App-Image-2026-01-03-at-16-09-30.jpg" alt="Les Associés Movere Conseil" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#2A1F18]/60 to-transparent flex items-end p-8 text-white font-bold italic text-lg shadow-sm">Vos partenaires de confiance</div>
                 </div>
                 <div>
@@ -318,14 +303,14 @@
                         </div>
                         <div class="p-5 bg-[#F8F5F0] rounded-2xl border border-[#E2D1C3] flex-1 text-center">
                             <p class="text-[#2A1F18] font-bold uppercase text-[10px] mb-1 tracking-wider">Valeur</p>
-                            <p class="text-sm text-[#4A3728]">Transparence totale & proximité humaine</p>
+                            <p class="text-sm text-[#4A3728]">Transparence & proximité humaine</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Expertise Fiscale -->
+        <!-- Tribune Expertise -->
         <section id="fiscalite" class="py-24 bg-[#F8F5F0]">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -350,7 +335,7 @@
             </div>
         </section>
 
-        <!-- Section Contact avec Endpoint Formspree: xykzbalz -->
+        <!-- Section Contact -->
         <section id="contact-page" class="py-24 bg-white border-t border-[#E2D1C3]/30">
             <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
                 <div>
@@ -375,9 +360,42 @@
                 </div>
             </div>
         </section>
+
+        <!-- Newsletter -->
+        <section id="newsletter" class="py-32 bg-[#2A1F18] text-[#F8F5F0] relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+                <h2 class="text-5xl font-bold mb-6 text-[#E2D1C3]">Newsletter mensuelle</h2>
+                <h3 class="text-3xl font-semibold mb-10 text-[#E2D1C3]">Un pays, chaque mois</h3>
+                <p class="text-[#E2D1C3]/80 text-xl max-w-4xl mx-auto mb-16 font-light leading-relaxed">
+                    Inscrivez-vous à notre newsletter exclusive et vous recevrez chaque mois une analyse complète d'un pays.
+                </p>
+                <div class="grid md:grid-cols-3 gap-12 mb-20 text-center">
+                    <div class="bg-white/5 p-10 rounded-[32px] border border-white/10 flex flex-col items-center group hover:bg-white/10 transition-all duration-300">
+                        <i data-lucide="map" class="w-10 h-10 text-[#A67D5D] mb-4"></i>
+                        <h4 class="text-2xl font-bold text-white mb-4">Un pays par mois</h4>
+                        <p class="text-sm opacity-70 leading-relaxed">Découvrez une destination en profondeur.</p>
+                    </div>
+                    <div class="bg-white/5 p-10 rounded-[32px] border border-white/10 flex flex-col items-center group hover:bg-white/10 transition-all duration-300">
+                        <i data-lucide="bar-chart-3" class="w-10 h-10 text-[#A67D5D] mb-4"></i>
+                        <h4 class="text-2xl font-bold text-white mb-4">Analyse complète</h4>
+                        <p class="text-sm opacity-70 leading-relaxed">Avantages, inconvénients et opportunités locales.</p>
+                    </div>
+                    <div class="bg-white/5 p-10 rounded-[32px] border border-white/10 flex flex-col items-center group hover:bg-white/10 transition-all duration-300">
+                        <i data-lucide="sparkles" class="w-10 h-10 text-[#A67D5D] mb-4"></i>
+                        <h4 class="text-2xl font-bold text-white mb-4">Conseils exclusifs</h4>
+                        <p class="text-sm opacity-70 leading-relaxed">Les tips inédits de nos experts expatriés.</p>
+                    </div>
+                </div>
+                <form id="newsletter-form" action="https://formspree.io/f/xykzbalz" method="POST" class="flex flex-col sm:flex-row gap-6 max-w-3xl mx-auto bg-white/5 p-3 rounded-[32px] border border-white/10 backdrop-blur-md">
+                    <input type="email" name="email" placeholder="Votre email" class="flex-1 bg-transparent px-8 py-5 rounded-[24px] text-white text-lg outline-none placeholder-white/30" required>
+                    <button type="submit" class="bg-[#A67D5D] text-white px-12 py-5 rounded-[24px] font-bold hover:bg-[#8B5E3C] transition-all text-xl shadow-lg active:scale-95">S'abonner</button>
+                </form>
+            </div>
+            <div class="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-[#A67D5D]/10 rounded-full blur-[120px]"></div>
+        </section>
     </div>
 
-    <!-- PAGE RECHERCHE (VIERGE) -->
+    <!-- PAGE RECHERCHE (Sans agent IA) -->
     <div id="page-search" class="page pt-32 pb-24 min-h-screen bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="mb-12">
@@ -392,84 +410,69 @@
                     <i data-lucide="construction" class="text-[#A67D5D] w-8 h-8"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-[#2A1F18] mb-2">Espace en cours de création</h3>
-                <p class="text-[#4A3728] max-w-md">Posez une question à notre IA experte pour commencer votre analyse.</p>
-                
-                <div class="mt-12 w-full max-w-2xl bg-white p-6 rounded-3xl shadow-sm border border-[#E2D1C3]/30">
-                    <div class="flex gap-2">
-                        <input type="text" id="ai-query" class="flex-1 bg-[#F8F5F0] p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#A67D5D]/30" placeholder="Ex: Avantages fiscaux au Portugal ?">
-                        <button onclick="askAI()" id="ai-btn" class="bg-[#2A1F18] text-white p-4 rounded-xl hover:bg-[#4A3728] transition shadow-md">
-                            <i data-lucide="sparkles" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                    <div id="ai-response" class="hidden mt-6 p-6 bg-[#F8F5F0] rounded-2xl text-sm leading-relaxed whitespace-pre-wrap italic font-light text-[#4A3728]"></div>
+                <p class="text-[#4A3728] max-w-md">Nous travaillons actuellement sur des outils exclusifs pour faciliter votre recherche de destination.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE ÉQUIPE -->
+    <div id="page-team" class="page pt-32 pb-24 min-h-screen bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <button onclick="navigateTo('home')" class="flex items-center gap-2 text-sm text-[#A67D5D] hover:underline mb-12">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Retour à l'accueil
+            </button>
+            <div class="relative h-[500px] md:h-[650px] w-full rounded-[48px] overflow-hidden mb-16 shadow-2xl">
+                <img src="https://i.postimg.cc/DZ1376zb/Whats-App-Image-Matteo-jules.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Matteo & Jules">
+                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+                <div class="absolute bottom-16 left-12 right-12">
+                    <h2 class="text-5xl font-bold text-[#2A1F18] mb-2 uppercase tracking-tight">Matteo & Jules</h2>
+                    <p class="text-xl text-[#A67D5D] italic font-semibold">Fondateurs de Movere Conseil</p>
+                </div>
+            </div>
+            <div class="max-w-4xl mx-auto text-center mb-24">
+                <p class="text-2xl md:text-3xl font-semibold leading-relaxed text-[#2A1F18]">
+                    Âgés de 21 et 22 ans, nous finalisons actuellement un master en gestion de patrimoine et sommes certifiés par les autorités des marchés financiers.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div class="bg-[#F8F5F0] p-10 rounded-[40px] border border-[#E2D1C3]/40 relative">
+                    <i data-lucide="quote" class="absolute -top-6 -left-6 w-12 h-12 text-[#A67D5D] opacity-10"></i>
+                    <p class="text-[#4A3728] leading-relaxed text-lg italic mb-8">
+                        “Je travaille aujourd’hui en alternance en tant que chargé d’études patrimoniales au sein d’un cabinet d’ingénierie patrimoniale à Paris. J’ai toujours été passionné par le conseil patrimonial, qu’il s’adresse au chef d’entreprise, au jeune actif ou au retraité. Ce projet me permet aujourd’hui d’accompagner les personnes souhaitant s’expatrier en leur proposant un accompagnement personnalisé. Il représente pour moi l’aboutissement de ma volonté d’aider et de conseiller les individus dans leurs choix patrimoniaux, fiscaux et juridiques.”
+                    </p>
+                    <p class="font-bold text-[#2A1F18] uppercase tracking-widest text-right">— Matteo</p>
+                </div>
+                <div class="bg-[#F8F5F0] p-10 rounded-[40px] border border-[#E2D1C3]/40 relative">
+                    <i data-lucide="quote" class="absolute -top-6 -left-6 w-12 h-12 text-[#A67D5D] opacity-10"></i>
+                    <p class="text-[#4A3728] leading-relaxed text-lg italic mb-8">
+                        “En alternance au sein d’une grande banque privée française à dimension internationale, j’interviens sur des sujets de gestion financière, de plans d’investissement et d’accompagnement au financement. Cette expérience m’a permis de développer une approche structurée et pragmatique de la gestion financière. Ce projet me permet de mettre mon expertise en gestion financière et en structuration d’investissements au service des projets d’expatriation. Il s’inscrit dans une logique de sécurisation et de structuration des décisions financières à long terme”
+                    </p>
+                    <p class="font-bold text-[#2A1F18] uppercase tracking-widest text-right">— Jules</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Newsletter Agrandie ✨ -->
-    <section id="newsletter" class="py-32 bg-[#2A1F18] text-[#F8F5F0] relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-5xl font-bold mb-6 text-[#E2D1C3]">Newsletter mensuelle</h2>
-            <h3 class="text-3xl font-semibold mb-10 text-[#E2D1C3]">Un pays, chaque mois</h3>
-            <p class="text-[#E2D1C3]/80 text-xl max-w-4xl mx-auto mb-16 font-light leading-relaxed">
-                Inscrivez-vous à notre newsletter exclusive et recevez chaque mois une analyse complète d'un pays.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-12 mb-20 text-center">
-                <div class="bg-white/5 p-10 rounded-[32px] border border-white/10 flex flex-col items-center group hover:bg-white/10 transition-all duration-300">
-                    <i data-lucide="map" class="w-10 h-10 text-[#A67D5D] mb-4"></i>
-                    <h4 class="text-2xl font-bold text-white mb-4">Un pays par mois</h4>
-                    <p class="text-sm opacity-70 leading-relaxed">Découvrez une destination en profondeur.</p>
-                </div>
-                <div class="bg-white/5 p-10 rounded-[32px] border border-white/10 flex flex-col items-center group hover:bg-white/10 transition-all duration-300">
-                    <i data-lucide="bar-chart-3" class="w-10 h-10 text-[#A67D5D] mb-4"></i>
-                    <h4 class="text-2xl font-bold text-white mb-4">Analyse complète</h4>
-                    <p class="text-sm opacity-70 leading-relaxed">Avantages, inconvénients et opportunités locales.</p>
-                </div>
-                <div class="bg-white/5 p-10 rounded-[32px] border border-white/10 flex flex-col items-center group hover:bg-white/10 transition-all duration-300">
-                    <i data-lucide="sparkles" class="w-10 h-10 text-[#A67D5D] mb-4"></i>
-                    <h4 class="text-2xl font-bold text-white mb-4">Conseils exclusifs</h4>
-                    <p class="text-sm opacity-70 leading-relaxed">Les tips inédits de nos experts expatriés.</p>
-                </div>
-            </div>
-
-            <form id="newsletter-form" action="https://formspree.io/f/xykzbalz" method="POST" class="flex flex-col sm:flex-row gap-6 max-w-3xl mx-auto bg-white/5 p-3 rounded-[32px] border border-white/10 backdrop-blur-md">
-                <input type="email" name="email" placeholder="Votre email" class="flex-1 bg-transparent px-8 py-5 rounded-[24px] text-white text-lg outline-none placeholder-white/30" required>
-                <button type="submit" class="bg-[#A67D5D] text-white px-12 py-5 rounded-[24px] font-bold hover:bg-[#8B5E3C] transition-all text-xl shadow-lg active:scale-95">S'abonner</button>
-            </form>
-            <p class="mt-8 text-center text-xs text-[#E2D1C3]/40 italic">Désinscription en un clic.</p>
-        </div>
-        <div class="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-[#A67D5D]/10 rounded-full blur-[120px]"></div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-white py-32 border-t border-[#E2D1C3]/40">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-16 mb-20 text-sm text-[#4A3728]">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-16 text-sm text-[#4A3728]">
             <div class="col-span-1 md:col-span-1">
                 <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">MOVERE CONSEIL</h5>
                 <p class="font-light italic leading-relaxed text-base">Conseil stratégique en expatriation. Penser votre départ, structurer votre patrimoine et s'installer sereinement.</p>
             </div>
             <div>
-                <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">Expertises</h5>
-                <ul class="space-y-4 text-base">
-                    <li>Analyse de destination</li>
-                    <li>Aide aux Visas</li>
-                    <li>Fiscalité</li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">Movere Conseil</h5>
-                <ul class="space-y-4 text-base">
-                    <li><a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition">Notre équipe</a></li>
+                <!-- Titre changé pour éviter la répétition -->
+                <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">À propos</h5>
+                <ul class="space-y-4 text-base font-semibold">
+                    <li><button onclick="navigateTo('team')" class="hover:text-[#A67D5D] transition text-left">Notre équipe</button></li>
                     <li><a href="#contact-page" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition">Nous contacter</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">Informations</h5>
-                <ul class="space-y-4 text-base">
-                    <li><a href="javascript:void(0)" onclick="openModal('modal-mentions')" class="underline decoration-[#E2D1C3] hover:text-[#A67D5D] transition">Mentions Légales</a></li>
-                    <li><a href="javascript:void(0)" onclick="openModal('modal-rgpd')" class="underline decoration-[#E2D1C3] hover:text-[#A67D5D] transition">Protection des Données</a></li>
+                <ul class="space-y-4 text-base font-semibold">
+                    <li><button onclick="openModal('modal-mentions')" class="underline decoration-[#E2D1C3] hover:text-[#A67D5D] transition text-left">Mentions Légales</button></li>
+                    <li><button onclick="openModal('modal-rgpd')" class="underline decoration-[#E2D1C3] hover:text-[#A67D5D] transition text-left">Protection des Données</button></li>
                     <li><a href="mailto:movereconseil@outlook.com" class="hover:text-[#A67D5D] transition underline decoration-[#E2D1C3]">movereconseil@outlook.com</a></li>
                 </ul>
             </div>
@@ -477,10 +480,11 @@
                 <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">Suivez-nous</h5>
                 <div class="flex gap-6 mt-6">
                     <a href="#" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    <!-- Ajout de l'icône TikTok -->
                     <a href="#" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm">
                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.28-2.26.74-4.63 2.58-5.91 1.49-1.02 3.38-1.35 5.17-.95.01 1.39.01 2.78.01 4.18-1.04-.32-2.2-.18-3.08.47-.63.45-1.04 1.18-1.11 1.96-.06 1.01.44 2.03 1.28 2.57.81.56 1.86.68 2.81.39.93-.24 1.71-.97 1.97-1.89.06-.23.08-.47.08-.71.01-4.04 0-8.07.01-12.11z"/></svg>
                     </a>
-                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                 </div>
             </div>
         </div>
@@ -488,68 +492,22 @@
     </footer>
 
     <!-- Modals -->
-    <div id="modal-mentions" class="modal"><div class="modal-content shadow-2xl"><h2 class="text-3xl font-bold mb-8">Mentions Légales</h2><div class="space-y-4 text-sm text-[#4A3728]"><strong>Dénomination :</strong> Movere Conseil S.A.S.<br><strong>Siège :</strong> France.<br><strong>Avertissement :</strong> Movere Conseil n'exerce pas d'activité réglementée sans agrément spécifique. Nos conseils sont stratégiques. E-mail : movereconseil@outlook.com</div><button onclick="closeModal('modal-mentions')" class="mt-8 bg-[#2A1F18] text-white px-8 py-3 rounded-xl font-bold transition hover:bg-[#4A3728]">Fermer</button></div></div>
+    <div id="modal-mentions" class="modal"><div class="modal-content shadow-2xl"><h2 class="text-3xl font-bold mb-8">Mentions Légales</h2><div class="space-y-4 text-sm text-[#4A3728]"><strong>Dénomination :</strong> Movere Conseil S.A.S.<br><strong>Siège :</strong> France.<br><strong>E-mail :</strong> movereconseil@outlook.com</div><button onclick="closeModal('modal-mentions')" class="mt-8 bg-[#2A1F18] text-white px-8 py-3 rounded-xl font-bold transition hover:bg-[#4A3728]">Fermer</button></div></div>
     <div id="modal-rgpd" class="modal"><div class="modal-content shadow-2xl"><h2 class="text-3xl font-bold mb-8">Protection des Données</h2><p class="text-sm text-[#4A3728]">Movere Conseil collecte vos données uniquement pour répondre à vos demandes ou envoyer la newsletter. Confidentialité garantie.</p><button onclick="closeModal('modal-rgpd')" class="mt-8 bg-[#2A1F18] text-white px-8 py-3 rounded-xl font-bold transition hover:bg-[#4A3728]">Fermer</button></div></div>
 
     <script>
         lucide.createIcons();
 
-        // ROUTER
         function navigateTo(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById('page-' + pageId).classList.add('active');
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) targetPage.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // MODALS
         function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
         window.onclick = function(e) { if (e.target.classList.contains('modal')) { e.target.style.display = "none"; document.body.style.overflow = "auto"; } };
-        
-        // API GEMINI
-        const apiKey = ""; 
-        async function askAI() {
-            const queryInput = document.getElementById('ai-query');
-            const btn = document.getElementById('ai-btn');
-            const responseDiv = document.getElementById('ai-response');
-            const query = queryInput.value.trim();
-            if (!query) return;
-            btn.disabled = true;
-            btn.innerHTML = '<i data-lucide="loader" class="animate-spin w-5 h-5"></i>';
-            lucide.createIcons();
-            responseDiv.classList.remove('hidden');
-            responseDiv.textContent = "Analyse experte en cours...";
-            responseDiv.classList.add('loading-dots');
-            const systemPrompt = "Tu es un expert chez Movere Conseil. Réponds avec professionnalisme aux questions d'expatriation.";
-            try {
-                const response = await callGemini(query, systemPrompt);
-                responseDiv.classList.remove('loading-dots');
-                responseDiv.textContent = response;
-            } catch (error) {
-                responseDiv.classList.remove('loading-dots');
-                responseDiv.textContent = "Erreur de connexion. Veuillez réessayer.";
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = '<i data-lucide="sparkles" class="w-5 h-5"></i>';
-                lucide.createIcons();
-            }
-        }
-        async function callGemini(userQuery, systemInstruction, retries = 5, delay = 1000) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const payload = { contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemInstruction }] } };
-            for (let i = 0; i < retries; i++) {
-                try {
-                    const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                    if (!response.ok) throw new Error();
-                    const result = await response.json();
-                    return result.candidates?.[0]?.content?.parts?.[0]?.text || "Aucune réponse.";
-                } catch (error) {
-                    if (i === retries - 1) throw error;
-                    await new Promise(res => setTimeout(res, delay));
-                    delay *= 2;
-                }
-            }
-        }
     </script>
 </body>
 </html>
