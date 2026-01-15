@@ -145,12 +145,8 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#E2D1C3]/40">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-4 cursor-pointer" onclick="navigateTo('home')">
-                <img src="https://i.postimg.cc/2y41bVdJ/Whats-App-Image-2026-01-03-at-16-09-30.jpg" alt="Logo Movere Conseil" class="logo-img h-[50px] rounded-md">
-                <div class="flex flex-col">
-                    <span class="text-xl font-bold tracking-tight text-[#2A1F18] leading-none uppercase">Movere</span>
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-[#A67D5D] mt-1 italic font-semibold">Conseil</span>
-                </div>
+            <div class="flex items-center cursor-pointer" onclick="navigateTo('home')">
+                <img src="https://i.postimg.cc/dt2BvXCv/Movere-conseil-logo-V3.png" alt="Logo Movere Conseil" class="logo-img h-[55px] w-auto rounded-md transition-transform duration-300 hover:scale-105">
             </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
                 <a href="#services" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">La méthode</a>
@@ -348,7 +344,7 @@
                     </div>
                 </div>
                 <div class="bg-[#F8F5F0] p-8 rounded-[32px] border border-[#E2D1C3]">
-                    <form id="main-contact-form" action="https://formspree.io/f/xykzbalz" method="POST" class="space-y-6">
+                    <form action="https://formspree.io/f/xykzbalz" method="POST" class="space-y-6">
                         <div class="grid grid-cols-2 gap-4">
                             <input type="text" name="prenom" placeholder="Prénom" class="contact-input" required>
                             <input type="text" name="nom" placeholder="Nom" class="contact-input" required>
@@ -369,7 +365,7 @@
                 <p class="text-[#E2D1C3]/80 text-xl max-w-4xl mx-auto mb-16 font-light leading-relaxed">
                     Inscrivez-vous à notre newsletter exclusive et vous recevrez chaque mois une analyse complète d'un pays.
                 </p>
-                <div class="grid md:grid-cols-3 gap-12 mb-20 text-center">
+                <div class="grid md:grid-cols-3 gap-12 mb-20 text-center text-[#F8F5F0]">
                     <div class="bg-white/5 p-10 rounded-[32px] border border-white/10 flex flex-col items-center group hover:bg-white/10 transition-all duration-300">
                         <i data-lucide="map" class="w-10 h-10 text-[#A67D5D] mb-4"></i>
                         <h4 class="text-2xl font-bold text-white mb-4">Un pays par mois</h4>
@@ -395,7 +391,7 @@
         </section>
     </div>
 
-    <!-- PAGE RECHERCHE (Sans agent IA) -->
+    <!-- PAGE RECHERCHE -->
     <div id="page-search" class="page pt-32 pb-24 min-h-screen bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="mb-12">
@@ -443,7 +439,7 @@
                     <p class="font-bold text-[#2A1F18] uppercase tracking-widest text-right">— Matteo</p>
                 </div>
                 <div class="bg-[#F8F5F0] p-10 rounded-[40px] border border-[#E2D1C3]/40 relative">
-                    <i data-lucide="quote" class="absolute -top-6 -left-6 w-12 h-12 text-[#A67D5D] opacity-10"></i>
+                    <i data-lucide="quote" class="absolute -top-6 -left-6 w-12 h-12 text-[#2A1F18] opacity-10"></i>
                     <p class="text-[#4A3728] leading-relaxed text-lg italic mb-8">
                         “En alternance au sein d’une grande banque privée française à dimension internationale, j’interviens sur des sujets de gestion financière, de plans d’investissement et d’accompagnement au financement. Cette expérience m’a permis de développer une approche structurée et pragmatique de la gestion financière. Ce projet me permet de mettre mon expertise en gestion financière et en structuration d’investissements au service des projets d’expatriation. Il s’inscrit dans une logique de sécurisation et de structuration des décisions financières à long terme”
                     </p>
@@ -455,17 +451,17 @@
 
     <!-- Footer -->
     <footer class="bg-white py-32 border-t border-[#E2D1C3]/40">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-16 text-sm text-[#4A3728]">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-16 mb-20 text-sm text-[#4A3728]">
             <div class="col-span-1 md:col-span-1">
                 <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">MOVERE CONSEIL</h5>
                 <p class="font-light italic leading-relaxed text-base">Conseil stratégique en expatriation. Penser votre départ, structurer votre patrimoine et s'installer sereinement.</p>
             </div>
             <div>
-                <!-- Titre changé pour éviter la répétition -->
                 <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">À propos</h5>
                 <ul class="space-y-4 text-base font-semibold">
                     <li><button onclick="navigateTo('team')" class="hover:text-[#A67D5D] transition text-left">Notre équipe</button></li>
                     <li><a href="#contact-page" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition">Nous contacter</a></li>
+                    <li><a href="mailto:movereconseil@outlook.com" class="hover:text-[#A67D5D] transition underline decoration-[#E2D1C3]">movereconseil@outlook.com</a></li>
                 </ul>
             </div>
             <div>
@@ -473,7 +469,6 @@
                 <ul class="space-y-4 text-base font-semibold">
                     <li><button onclick="openModal('modal-mentions')" class="underline decoration-[#E2D1C3] hover:text-[#A67D5D] transition text-left">Mentions Légales</button></li>
                     <li><button onclick="openModal('modal-rgpd')" class="underline decoration-[#E2D1C3] hover:text-[#A67D5D] transition text-left">Protection des Données</button></li>
-                    <li><a href="mailto:movereconseil@outlook.com" class="hover:text-[#A67D5D] transition underline decoration-[#E2D1C3]">movereconseil@outlook.com</a></li>
                 </ul>
             </div>
             <div>
@@ -481,19 +476,101 @@
                 <div class="flex gap-6 mt-6">
                     <a href="#" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm"><i data-lucide="youtube" class="w-6 h-6"></i></a>
                     <a href="#" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                    <!-- Ajout de l'icône TikTok -->
-                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.28-2.26.74-4.63 2.58-5.91 1.49-1.02 3.38-1.35 5.17-.95.01 1.39.01 2.78.01 4.18-1.04-.32-2.2-.18-3.08.47-.63.45-1.04 1.18-1.11 1.96-.06 1.01.44 2.03 1.28 2.57.81.56 1.86.68 2.81.39.93-.24 1.71-.97 1.97-1.89.06-.23.08-.47.08-.71.01-4.04 0-8.07.01-12.11z"/></svg>
-                    </a>
                 </div>
             </div>
         </div>
         <div class="text-center pt-12 border-t border-[#F8F5F0] text-sm opacity-50 font-light">© 2024 Movere Conseil. Tous droits réservés.</div>
     </footer>
 
-    <!-- Modals -->
-    <div id="modal-mentions" class="modal"><div class="modal-content shadow-2xl"><h2 class="text-3xl font-bold mb-8">Mentions Légales</h2><div class="space-y-4 text-sm text-[#4A3728]"><strong>Dénomination :</strong> Movere Conseil S.A.S.<br><strong>Siège :</strong> France.<br><strong>E-mail :</strong> movereconseil@outlook.com</div><button onclick="closeModal('modal-mentions')" class="mt-8 bg-[#2A1F18] text-white px-8 py-3 rounded-xl font-bold transition hover:bg-[#4A3728]">Fermer</button></div></div>
-    <div id="modal-rgpd" class="modal"><div class="modal-content shadow-2xl"><h2 class="text-3xl font-bold mb-8">Protection des Données</h2><p class="text-sm text-[#4A3728]">Movere Conseil collecte vos données uniquement pour répondre à vos demandes ou envoyer la newsletter. Confidentialité garantie.</p><button onclick="closeModal('modal-rgpd')" class="mt-8 bg-[#2A1F18] text-white px-8 py-3 rounded-xl font-bold transition hover:bg-[#4A3728]">Fermer</button></div></div>
+    <!-- Modal Mentions Légales mise à jour -->
+    <div id="modal-mentions" class="modal"><div class="modal-content shadow-2xl">
+        <h2 class="text-3xl font-bold mb-8">Mentions légales</h2>
+        <div class="space-y-6 text-sm text-[#4A3728] leading-relaxed">
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest">1. Éditeur du site</h3>
+            <p>Conformément aux dispositions de l’article 6-III de la loi n°2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique (LCEN), il est précisé aux utilisateurs du site les informations suivantes :<br>
+            Le présent site est édité par : <strong>Movere conseil</strong><br>
+            Projet en cours de création – structure non immatriculée à ce jour<br>
+            Adresse de contact : movereconseil@outlook.com</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest">2. Hébergement</h3>
+            <p>Le site est hébergé par :<br>
+            GitHub, Inc.<br>
+            88 Colin P. Kelly Jr. Street<br>
+            San Francisco, CA 94107<br>
+            États-Unis</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest">3. Nom de domaine</h3>
+            <p>Le nom de domaine est enregistré auprès de :<br>
+            IONOS SE<br>
+            Elgendorfer Straße 57<br>
+            56410 Montabaur<br>
+            Allemagne</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest">4. Statut de l’activité et périmètre actuel</h3>
+            <p>Le site présente un projet en cours de structuration, dont l’activité n’est pas encore immatriculée et n’exerce à ce jour aucune activité réglementée.<br>
+            En particulier : le site n’exerce pas actuellement une activité de Conseil en Investissement Financier (CIF) ; n'est pas immatriculé à l’ORIAS ; n'est pas membre d’une association professionnelle agréée (notamment ANACOFI). Aucune assurance de responsabilité civile professionnelle n’est souscrite à ce stade.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest">5. Nature des contenus</h3>
+            <p>Les contenus publiés ont exclusivement pour objet la diffusion d’informations générales et la vulgarisation pédagogique. Les informations diffusées ne constituent pas des recommandations personnalisées ni un conseil financier, juridique, fiscal ou patrimonial individualisé. L’utilisateur reconnaît que toute décision prise sur la base de ces informations relève de sa responsabilité exclusive.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest">6. Évolution future de l’activité</h3>
+            <p>Le projet a vocation à évoluer. À terme, et uniquement après immatriculation et obtention des agréments requis, certaines activités réglementées pourront être proposées.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest">9. Propriété intellectuelle</h3>
+            <p>L’ensemble des éléments composant le site (textes, graphismes, logos, etc.) est protégé par le droit de la propriété intellectuelle. Toute reproduction sans autorisation préalable écrite est strictement interdite.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest">10. Droit applicable</h3>
+            <p>Le site est soumis au droit français. Tout litige relève de la compétence exclusive des juridictions françaises.</p>
+
+            <p class="text-xs italic pt-8 border-t border-[#E2D1C3]">Dernière mise à jour : 10 janvier 2026</p>
+        </div>
+        <button onclick="closeModal('modal-mentions')" class="mt-8 bg-[#2A1F18] text-white px-8 py-3 rounded-xl font-bold transition hover:bg-[#4A3728]">Fermer</button>
+    </div></div>
+    
+    <!-- Modal Protection des Données -->
+    <div id="modal-rgpd" class="modal"><div class="modal-content shadow-2xl">
+        <h2 class="text-3xl font-bold mb-8">Politique de protection des données personnelles</h2>
+        <div class="space-y-6 text-sm text-[#4A3728] leading-relaxed">
+            <p>La présente politique de protection des données personnelles a pour objet d’informer les utilisateurs du site <strong>Movere Conseil</strong> des modalités de collecte, d’utilisation et de protection de leurs données à caractère personnel, conformément au Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) et à la loi Informatique et Libertés modifiée.</p>
+            <p>Le site est édité dans le cadre d’un projet en cours de structuration, non immatriculé à ce jour.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">2. Responsable du traitement</h3>
+            <p>Les responsables du traitement sont : Mattéo Chabrière et Jules Pétrissans.<br>
+            <strong>Movere conseil</strong><br>
+            Responsables : Mattéo Chabrière et Jules Pétrissans<br>
+            Adresse de contact : movereconseil@outlook.com</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">3. Données collectées</h3>
+            <p>Le site collecte uniquement les données strictement nécessaires à son fonctionnement et à la communication avec les utilisateurs.</p>
+            <p><strong>3.1 Données fournies volontairement :</strong> nom et prénom (si fournis), adresse électronique, contenu du message transmis via un formulaire de contact ou par email.</p>
+            <p><strong>3.2 Données techniques :</strong> adresse IP, type de navigateur, données de navigation anonymisées à des fins statistiques.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">4. Finalités du traitement</h3>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>répondre aux demandes envoyées via le site,</li>
+                <li>assurer le bon fonctionnement et la sécurité du site,</li>
+                <li>réaliser des statistiques anonymes de fréquentation.</li>
+            </ul>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">5. Base légale du traitement</h3>
+            <p>Les traitements reposent sur : le consentement de l’utilisateur (formulaire de contact), l’intérêt légitime du responsable de traitement pour assurer le fonctionnement du site.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">6. Destinataires des données</h3>
+            <p>Les données collectées sont destinées exclusivement aux responsables du site. Elles ne font l’objet d’aucune vente, cession ou partage avec des partenaires commerciaux.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">7. Durée de conservation</h3>
+            <p>Données issues des formulaires de contact : 12 mois maximum ; Données techniques et statistiques : durées variables conformément aux recommandations de la CNIL.</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">9. Droits des personnes concernées</h3>
+            <p>Conformément au RGPD, l’utilisateur dispose des droits d’accès, de rectification, d’effacement, d’opposition et de limitation du traitement. Ces droits peuvent être exercés à : movereconseil@outlook.com</p>
+
+            <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">11. Réclamation</h3>
+            <p>L’utilisateur dispose du droit d’introduire une réclamation auprès de la CNIL : <a href="https://www.cnil.fr" class="underline">www.cnil.fr</a></p>
+
+            <p class="text-xs italic pt-8 border-t border-[#E2D1C3]">Dernière mise à jour : 15 janvier 2026</p>
+        </div>
+        <button onclick="closeModal('modal-rgpd')" class="mt-8 bg-[#2A1F18] text-white px-8 py-3 rounded-xl font-bold transition hover:bg-[#4A3728]">Fermer</button>
+    </div></div>
 
     <script>
         lucide.createIcons();
