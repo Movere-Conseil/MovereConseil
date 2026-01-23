@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movere Conseil | Penser, structurer, s'installer</title>
+    
+    <!-- Icône de l'onglet (Favicon) -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/dt2BvXCv/Movere-conseil-logo-V3.png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/dt2BvXCv/Movere-conseil-logo-V3.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -146,6 +151,7 @@
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#E2D1C3]/40">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center cursor-pointer" onclick="navigateTo('home')">
+                <!-- Logo V3 (55px) -->
                 <img src="https://i.postimg.cc/dt2BvXCv/Movere-conseil-logo-V3.png" alt="Logo Movere Conseil" class="logo-img h-[55px] w-auto rounded-md transition-transform duration-300 hover:scale-105">
             </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
@@ -357,7 +363,7 @@
             </div>
         </section>
 
-        <!-- Newsletter Detailed -->
+        <!-- Newsletter -->
         <section id="newsletter" class="py-32 bg-[#2A1F18] text-[#F8F5F0] relative overflow-hidden">
             <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
                 <h2 class="text-5xl font-bold mb-6 text-[#E2D1C3]">Newsletter mensuelle</h2>
@@ -382,7 +388,7 @@
                         <p class="text-sm opacity-70 leading-relaxed">Les tips inédits de nos experts expatriés.</p>
                     </div>
                 </div>
-                <form action="https://formspree.io/f/xykzbalz" method="POST" class="flex flex-col sm:flex-row gap-6 max-w-3xl mx-auto bg-white/5 p-3 rounded-[32px] border border-white/10 backdrop-blur-md">
+                <form id="newsletter-form" action="https://formspree.io/f/xykzbalz" method="POST" class="flex flex-col sm:flex-row gap-6 max-w-3xl mx-auto bg-white/5 p-3 rounded-[32px] border border-white/10 backdrop-blur-md">
                     <input type="email" name="email" placeholder="Votre email" class="flex-1 bg-transparent px-8 py-5 rounded-[24px] text-white text-lg outline-none placeholder-white/30" required>
                     <button type="submit" class="bg-[#A67D5D] text-white px-12 py-5 rounded-[24px] font-bold hover:bg-[#8B5E3C] transition-all text-xl shadow-lg active:scale-95">S'abonner</button>
                 </form>
@@ -476,7 +482,6 @@
                 <h5 class="font-bold text-[#2A1F18] mb-8 uppercase text-xs tracking-widest">Suivez-nous</h5>
                 <div class="flex gap-6 mt-6">
                     <a href="https://www.youtube.com/@Movereconseil" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                    <!-- Lien Instagram MISE À JOUR -->
                     <a href="https://www.instagram.com/movereconseil/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#F8F5F0] text-[#2A1F18] hover:bg-[#A67D5D] hover:text-white transition-all shadow-sm"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                 </div>
             </div>
