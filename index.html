@@ -70,6 +70,12 @@
             display: block;
         }
 
+        /* --- STYLES ONGLETS OFFRES --- */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        .tab-btn.active { background-color: var(--brown-deep); color: white; border-color: var(--brown-deep); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
         /* --- ANIMATIONS GLOBE --- */
         @keyframes rotate-map {
             from { transform: translateX(0); }
@@ -157,6 +163,7 @@
             <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
                 <a href="#services" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">La méthode</a>
                 <a href="#parcours" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">Nos parcours</a>
+                <a href="#offres" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">Nos offres</a>
                 <a href="#fiscalite" onclick="navigateTo('home')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">Expertise Fiscale</a>
                 <button onclick="navigateTo('team')" class="hover:text-[#A67D5D] transition text-[#2A1F18]">L'équipe</button>
                 <a href="#contact-page" onclick="navigateTo('home')" class="bg-[#2A1F18] text-white px-6 py-2.5 rounded-full hover:bg-[#4A3728] transition shadow-md">Contact</a>
@@ -284,6 +291,239 @@
                     </div>
                     <a href="https://cal.com/movereconseil-outlook.com" target="_blank" class="w-full py-5 rounded-2xl border-2 border-[#2A1F18] text-[#2A1F18] font-bold hover:bg-[#2A1F18] hover:text-white transition text-lg text-center inline-block">Organiser mon installation</a>
                 </div>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION OFFRES -->
+        <section id="offres" class="py-24 bg-white border-t border-[#E2D1C3]/30">
+            <div class="max-w-6xl mx-auto px-6">
+                
+                <div class="text-center mb-16">
+                    <div class="inline-block px-4 py-1 rounded-full bg-[#F8F5F0] text-[#A67D5D] text-xs font-bold mb-6 uppercase border border-[#E2D1C3]">Nos Services</div>
+                    <h2 class="text-4xl font-bold mb-4 text-[#2A1F18]">Nos Offres d'Accompagnement</h2>
+                    <p class="text-[#4A3728] text-lg max-w-2xl mx-auto font-light leading-relaxed">Conception du projet, mise en place, installation et préconisations pour optimiser votre nouvelle vie.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="tab-btn active px-6 py-3 rounded-full border border-[#E2D1C3] text-[#4A3728] font-semibold hover:border-[#A67D5D] transition-all flex items-center gap-2" onclick="openTab(event, 'tab-classique')">
+                        <i data-lucide="users" class="w-4 h-4"></i> Classique
+                    </button>
+                    <button class="tab-btn px-6 py-3 rounded-full border border-[#E2D1C3] text-[#4A3728] font-semibold hover:border-[#A67D5D] transition-all flex items-center gap-2" onclick="openTab(event, 'tab-dirigeant')">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i> Dirigeant
+                    </button>
+                    <button class="tab-btn px-6 py-3 rounded-full border border-[#E2D1C3] text-[#4A3728] font-semibold hover:border-[#A67D5D] transition-all flex items-center gap-2" onclick="openTab(event, 'tab-micro')">
+                        <i data-lucide="laptop" class="w-4 h-4"></i> Micro-entrepreneur
+                    </button>
+                    <button class="tab-btn px-6 py-3 rounded-full border border-[#E2D1C3] text-[#4A3728] font-semibold hover:border-[#A67D5D] transition-all flex items-center gap-2" onclick="openTab(event, 'tab-retraite')">
+                        <i data-lucide="coffee" class="w-4 h-4"></i> Retraité
+                    </button>
+                </div>
+
+                <div class="bg-[#F8F5F0] rounded-[32px] p-8 md:p-12 border border-[#E2D1C3]/40 shadow-sm">
+                    
+                    <div id="tab-classique" class="tab-content active">
+                        <div class="mb-10 text-center">
+                            <h3 class="text-3xl font-bold text-[#2A1F18] mb-2">Parcours Classique</h3>
+                            <p class="text-[#A67D5D] font-semibold mb-4">Destiné aux personnes ou familles souhaitant s'expatrier et préparer leur installation à l'étranger.</p>
+                            <p class="text-[#4A3728] font-light max-w-3xl mx-auto">Objectif : Vous apporter une vision claire de votre projet d'expatriation et vous donner les clés pour organiser votre départ dans les meilleures conditions.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
+                            <div class="bg-white p-8 rounded-2xl border border-[#E2D1C3]/50 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Essentiel</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">300 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow mb-6 break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination envisagée</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations générales sur les étapes à suivre et l'organisation de votre installation</li>
+                                </ul>
+                                <p class="text-xs text-[#A67D5D] italic mt-auto">* Pas de responsabilité engagée</p>
+                            </div>
+                            <div class="bg-white p-8 rounded-2xl border-2 border-[#2A1F18] flex flex-col h-full shadow-lg transform lg:-translate-y-4">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Accompagnement complet</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">650 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination envisagée</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations sur mesure au regard de votre situation et de l'organisation de votre installation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse personnalisée des effets de l'expatriation au regard de votre situation, appuyée par des comparatifs chiffrés</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Note complémentaire avec nos préconisations pour optimiser votre nouvelle vie sur place</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Assistance de la conception du projet jusqu'à votre installation effective</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-8 rounded-2xl border border-[#E2D1C3]/50 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Exploration</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">790 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i><strong>Élaboration d'une destination sur mesure au regard de votre profil et de vos objectifs</strong></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination choisis</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations sur mesure au regard de votre situation et de l'organisation de votre installation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse personnalisée des effets de l'expatriation au regard de votre situation, appuyée par des comparatifs chiffrés</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Note complémentaire avec nos préconisations pour optimiser votre nouvelle vie sur place</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Assistance de la conception du projet jusqu'à votre installation effective</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-dirigeant" class="tab-content">
+                        <div class="mb-10 text-center">
+                            <h3 class="text-3xl font-bold text-[#2A1F18] mb-2">Parcours Dirigeant</h3>
+                            <p class="text-[#A67D5D] font-semibold mb-4">Destiné aux chefs d'entreprise souhaitant s'expatrier seuls ou avec leur famille.</p>
+                            <p class="text-[#4A3728] font-light max-w-3xl mx-auto">Objectif : Vous accompagner dans votre expatriation en intégrant les enjeux personnels, familiaux et professionnels liés à votre activité.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
+                            <div class="bg-white p-8 rounded-2xl border border-[#E2D1C3]/50 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Essentiel</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">500 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow mb-6 break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination envisagée</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations générales sur les étapes à suivre et l'organisation de votre installation</li>
+                                </ul>
+                                <p class="text-xs text-[#A67D5D] italic mt-auto">* Pas de responsabilité engagée</p>
+                            </div>
+                            <div class="bg-white p-8 rounded-2xl border-2 border-[#2A1F18] flex flex-col h-full shadow-lg transform lg:-translate-y-4">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Accompagnement complet</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">950 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination envisagée</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations sur mesure au regard de votre situation et de l'organisation de votre installation</li>
+                                    <li class="flex items-start gap-2 font-semibold text-[#2A1F18]"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Focus sur le devenir de votre entreprise au regard de vos objectifs</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse personnalisée des effets de l'expatriation au regard de votre situation, appuyée par des comparatifs chiffrés</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Note complémentaire avec nos préconisations pour optimiser votre nouvelle vie sur place</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Assistance de la conception du projet jusqu'à votre installation effective</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-8 rounded-2xl border border-[#E2D1C3]/50 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Exploration</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">1 290 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i><strong>Élaboration d'une destination sur mesure au regard de votre profil et de vos objectifs</strong></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination choisis</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations sur mesure au regard de votre situation et de l'organisation de votre installation</li>
+                                    <li class="flex items-start gap-2 font-semibold text-[#2A1F18]"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Focus sur le devenir de votre entreprise au regard de vos objectifs</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse personnalisée des effets de l'expatriation au regard de votre situation, appuyée par des comparatifs chiffrés</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Note complémentaire avec nos préconisations pour optimiser votre nouvelle vie sur place</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Assistance de la conception du projet jusqu'à votre installation effective</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-micro" class="tab-content">
+                        <div class="mb-10 text-center">
+                            <h3 class="text-3xl font-bold text-[#2A1F18] mb-2">Parcours Micro-entrepreneur</h3>
+                            <p class="text-[#A67D5D] font-semibold mb-4">Pour les micro-entrepreneurs, freelances et digital nomads souhaitant s'installer à l'étranger seuls ou avec leur famille.</p>
+                            <p class="text-[#4A3728] font-light max-w-3xl mx-auto">Objectif : Vous accompagner dans votre expatriation en tenant compte de votre mode de vie et des enjeux liés à votre activité.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
+                            <div class="bg-white p-8 rounded-2xl border border-[#E2D1C3]/50 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Essentiel</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">400 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow mb-6 break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination envisagée</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations générales sur les étapes à suivre et l'organisation de votre installation</li>
+                                </ul>
+                                <p class="text-xs text-[#A67D5D] italic mt-auto">* Pas de responsabilité engagée</p>
+                            </div>
+                            <div class="bg-white p-8 rounded-2xl border-2 border-[#2A1F18] flex flex-col h-full shadow-lg transform lg:-translate-y-4">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Accompagnement complet</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">750 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination envisagée</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations sur mesure au regard de votre situation et de l'organisation de votre installation</li>
+                                    <li class="flex items-start gap-2 font-semibold text-[#2A1F18]"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Focus sur le devenir de votre activité au regard de vos objectifs</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse personnalisée des effets de l'expatriation au regard de votre situation, appuyée par des comparatifs chiffrés</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Note complémentaire avec nos préconisations pour optimiser votre nouvelle vie sur place</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Assistance de la conception du projet jusqu'à votre installation effective</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-8 rounded-2xl border border-[#E2D1C3]/50 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Exploration</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">990 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i><strong>Élaboration d'une destination sur mesure au regard de votre profil et de vos objectifs</strong></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination choisis</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations sur mesure au regard de votre situation et de l'organisation de votre installation</li>
+                                    <li class="flex items-start gap-2 font-semibold text-[#2A1F18]"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Focus sur le devenir de votre activité au regard de vos objectifs</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse personnalisée des effets de l'expatriation au regard de votre situation, appuyée par des comparatifs chiffrés</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Note complémentaire avec nos préconisations pour optimiser votre nouvelle vie sur place</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Assistance de la conception du projet jusqu'à votre installation effective</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-retraite" class="tab-content">
+                        <div class="mb-10 text-center">
+                            <h3 class="text-3xl font-bold text-[#2A1F18] mb-2">Parcours Retraité</h3>
+                            <p class="text-[#A67D5D] font-semibold mb-4">Pour les retraités ou futurs retraités souhaitant s'expatrier seuls ou en couple.</p>
+                            <p class="text-[#4A3728] font-light max-w-3xl mx-auto">Objectif : Vous apporter une vision claire et sereine de votre projet d'expatriation en anticipant les enjeux liés à votre qualité de vie, à votre logement et à la transmission de votre patrimoine.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
+                            <div class="bg-white p-8 rounded-2xl border border-[#E2D1C3]/50 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Essentiel</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">300 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow mb-6 break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination envisagée</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations générales sur les étapes à suivre et l'organisation de votre installation</li>
+                                </ul>
+                                <p class="text-xs text-[#A67D5D] italic mt-auto">* Pas de responsabilité engagée</p>
+                            </div>
+                            <div class="bg-white p-8 rounded-2xl border-2 border-[#2A1F18] flex flex-col h-full shadow-lg transform lg:-translate-y-4">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Accompagnement complet</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">600 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination envisagée</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations sur mesure au regard de votre situation et de l'organisation de votre installation</li>
+                                    <li class="flex items-start gap-2 font-semibold text-[#2A1F18]"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Focus sur l'accès aux soins et la qualité de vie</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse personnalisée des effets de l'expatriation au regard de votre situation, appuyée par des comparatifs chiffrés</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Note complémentaire avec nos préconisations pour optimiser votre nouvelle vie sur place</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Assistance de la conception du projet jusqu'à votre installation effective</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-8 rounded-2xl border border-[#E2D1C3]/50 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-[#2A1F18] mb-2">Exploration</h4>
+                                <div class="text-3xl font-bold text-[#A67D5D] mb-6">700 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                                <ul class="space-y-4 text-sm text-[#4A3728] font-light flex-grow break-words">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i><strong>Élaboration d'une destination sur mesure au regard de votre profil et de vos objectifs</strong></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse de votre projet d'expatriation et de la destination choisis</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Remise d'une étude de votre pays d'expatriation</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Recommandations sur mesure au regard de votre situation et de l'organisation de votre installation</li>
+                                    <li class="flex items-start gap-2 font-semibold text-[#2A1F18]"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Focus sur l'accès aux soins et la qualité de vie</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Analyse personnalisée des effets de l'expatriation au regard de votre situation, appuyée par des comparatifs chiffrés</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Note complémentaire avec nos préconisations pour optimiser votre nouvelle vie sur place</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-[#A67D5D] mt-0.5 shrink-0"></i>Assistance de la conception du projet jusqu'à votre installation effective</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> 
+                
+                <div class="mt-16 bg-white p-8 md:p-12 rounded-[32px] border border-[#E2D1C3]/40 shadow-sm flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-16 h-16 bg-[#F8F5F0] rounded-full flex items-center justify-center shrink-0 border border-[#E2D1C3]">
+                        <i data-lucide="help-circle" class="w-8 h-8 text-[#A67D5D]"></i>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-[#2A1F18] mb-2">Questions sur des points précis</h3>
+                        <p class="text-[#4A3728] font-light mb-4">Réponse écrite sur des questions ciblées liées à votre projet d'expatriation, fondée sur les textes applicables (convention fiscale, droit interne français et droit interne du pays cible), ainsi que sur la jurisprudence existante lorsqu'elle est pertinente.</p>
+                        <p class="text-xs text-[#A67D5D] italic">Cette offre est réservée aux demandes portant sur des points ciblés et suffisamment précis. Si la question nécessite une étude plus large ou un traitement approfondi, un devis personnalisé vous sera proposé.</p>
+                    </div>
+                    <div class="shrink-0 text-center md:text-right border-t md:border-t-0 md:border-l border-[#E2D1C3]/40 pt-6 md:pt-0 md:pl-8">
+                        <div class="text-3xl font-bold text-[#A67D5D] mb-2">75 € <span class="text-sm text-[#4A3728] font-normal">HT</span></div>
+                        <a href="#contact-page" onclick="navigateTo('home')" class="inline-block px-6 py-2.5 bg-[#2A1F18] text-white rounded-xl text-sm font-bold hover:bg-[#4A3728] transition shadow-md">Poser ma question</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -550,7 +790,7 @@
             <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">3. Données collectées</h3>
             <p>Le site collecte uniquement les données strictement nécessaires à son fonctionnement et à la communication avec les utilisateurs.</p>
             <p><strong>3.1 Données fournies volontairement :</strong> nom et prénom (si fournis), adresse électronique, contenu du message transmis via un formulaire de contact ou par email.</p>
-            <p><strong>3.2 Données techniques :</strong> adresse IP, type de navigateur, données de navigation anonymisées à des fins statistiques.</p>
+            <p><strong>3.2 Données technical :</strong> adresse IP, type de navigateur, données de navigation anonymisées à des fins statistiques.</p>
 
             <h3 class="font-bold text-[#2A1F18] uppercase text-xs tracking-widest mt-8">4. Finalités du traitement</h3>
             <ul class="list-disc pl-5 space-y-2">
@@ -592,6 +832,14 @@
         function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
         window.onclick = function(e) { if (e.target.classList.contains('modal')) { e.target.style.display = "none"; document.body.style.overflow = "auto"; } };
+        
+        function openTab(evt, tabId) {
+            document.querySelectorAll(".tab-content").forEach(el => { el.style.display="none"; el.classList.remove("active");});
+            document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
     </script>
 </body>
 </html>
